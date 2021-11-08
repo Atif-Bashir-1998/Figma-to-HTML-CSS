@@ -1,0 +1,9 @@
+main{
+    margin-top: 30px;
+}
+
+.main-margin{
+    @include breakpoint(xxl){
+        margin-left: 250px;
+    }
+}

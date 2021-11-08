@@ -1,0 +1,36 @@
+input {
+	height: 27px;
+	border: 1px solid $light-grey;
+	padding-left: 10px;
+
+	&:focus{
+		outline: $light-grey;
+	}
+
+	@include breakpoint(lg) {
+		width: 300px;
+	}
+}
+
+.input__header{
+	@include breakpoint(max-sm){
+		width: 100px;
+	}
+}
+
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: $light-grey;
+}
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: $light-grey;
+}
+:-ms-input-placeholder {
+	/* IE 10+ */
+	color: $light-grey;
+}
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: $light-grey;
+}

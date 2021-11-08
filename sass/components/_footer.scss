@@ -1,0 +1,20 @@
+footer{
+    background-color: $dark-grey;
+    height: 53px;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-sm;
+    margin-top: 30px;
+
+    @include breakpoint(lg){
+        font-size: 12px;
+        padding: $padding-lg;
+    }
+
+    .credits{
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+}

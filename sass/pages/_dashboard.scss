@@ -1,0 +1,269 @@
+.article-links{
+    
+    padding: $padding-sm;
+
+    @include breakpoint(lg){
+        padding: 0 $padding-lg;
+    }
+
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        padding-bottom: 15px;
+        border-bottom: 1px solid $dark-grey;
+    }
+
+    .right{
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+
+        @include breakpoint(lg){
+            a, p{
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.article-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-sm;
+
+    @include breakpoint(lg){
+        padding: $padding-lg;
+    }
+
+    @include breakpoint(max-sm){
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    p, button{
+        font-size: 11px;
+
+        @include breakpoint(lg){
+            font-size: 15px;
+        }
+    }
+
+    .left{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        @include breakpoint(max-sm){
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint(lg){
+            gap: 16px;
+        }
+
+        p{
+            color: $blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    .date-selector{
+        display: flex;
+    }
+}
+
+.article-stats{
+    margin: 0 $margin-sm;
+    padding: $padding-sm 0;
+    background-color: $white;
+
+    @include breakpoint(lg){
+        margin: 0 $padding-lg;
+        padding: $padding-lg;
+    }
+
+    @include breakpoint(xl){
+        display: flex;
+    }
+
+    .charts-container{
+        display: flex;
+        margin: $margin-sm;
+
+        @include breakpoint(max-sm){
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint(lg){
+            width: 40%;
+            gap: 30px;
+        }
+
+        @include breakpoint(xl){
+            border-right: 2px solid $light-grey;
+        }
+    }
+
+    .article-info{
+        margin-top: 14px;
+        // display: flex;
+
+        @include breakpoint(lg){
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+
+            &__left{
+                width: 50%;
+            }
+
+            &__right{
+                width: 50%;
+
+                .article-info__row{
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+
+    .article-info__row{
+        width: 70%;
+        margin-left: $margin-sm;
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include breakpoint(lg){
+            width: 80%;
+        }
+
+        .info-heading{
+            width: 40%;
+            font-weight: bold;
+        }
+
+        .info-detail{
+            width: 60%;
+            text-align: left;
+            display: flex;
+            align-items: center;
+
+            img{
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .chart__data{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .chart__data__numbers{
+        font-size: 14px;
+        font-weight: bold;
+        color: $green;
+
+        @include breakpoint(lg){
+            font-size: $text-xl;
+        }
+    }
+
+    .chart__data__numbers--orange{
+        color: $orange;
+    }
+
+    .chart__data__title{
+        color: $blue;
+        font-weight: 600;
+    }
+
+    .chart__data__info{
+        color: $darker-grey;
+    }
+}
+
+.article{
+    margin: $margin-sm;
+    padding: $padding-sm;
+    background-color: $white;
+
+    @include breakpoint(lg){
+        margin: $padding-lg;
+        padding: $padding-lg;
+    }
+
+    .article-intro{
+        margin-bottom: 32px;
+
+        .article-heading{
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid $light-grey;
+            padding-bottom: 3px;
+            margin-bottom: 18px;
+
+            @include breakpoint(lg){
+                font-size: $text-xxl;
+            }
+        }
+    
+        .article-description{
+            font-style: italic;
+        }
+    }
+
+    .article-paragraph{
+        &__heading{
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 24px;
+
+            @include breakpoint(lg){
+                font-size: $text-xl;
+            }
+        }
+
+        &__description{
+            margin-bottom: 24px;
+
+            p{
+                padding: 7px 0;
+
+                @include breakpoint(lg){
+                    padding: 14px 0;
+                }
+            }
+
+            img{
+                width: 100%;
+            }
+        }
+
+        @include breakpoint(lg){
+            .flexbox-paragraph{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .typography-paragraph{
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+
+                img{
+                    grid-row: 1/3;
+                }
+            }
+        }
+    }
+}

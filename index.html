@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>OnlineBeratung</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+	<header>
+		<!-- <nav class="desktop-nav"></nav> -->
+		<nav class="mobile-nav">
+			<img src="./assets/images/badge.png" class="mobile-icon-lg icon" onclick="openNav()" id="sidebar-btn" />
+			<section class="right-side">
+				<input type="text" placeholder="Search Here" class="input__header" />
+				<img src="./assets/images/bell-outline.png" class="mobile-icon icon" />
+				<img src="./assets/images/email-outline.png" class="mobile-icon icon" />
+				<div class="user-profile">
+					<img src="./assets/images/avatar.png" alt="" class="mobile-icon-lg avatar">
+					<img src="./assets/images/chevron-down.png" alt="" class="mobile-icon icon">
+				</div>
+			</section>
+		</nav>
+
+		<!-- sidenav -->
+		<div id="sidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+				<img src="./assets/images/chevron-left-white.png" alt="" class="mobile-icon icon">
+			</a>
+			<section class="sidebar-content">
+				<div class="logo">
+					<p class="logo__heading">OB</p>
+					<p class="logo__text">OnlineBeratung</p>
+				</div>
+				<div class="user">
+					<article class="user__image">
+						<img src="./assets/images/avatar.png" alt="" class="avatar">
+						<div class="status-online">
+							</d>
+					</article>
+					<article class="user__data">
+						<p class="user__name">Pablo Molina</p>
+						<p class="user__type">Premium user</p>
+					</article>
+				</div>
+				<div class="main-menu">
+					<p class="main-menu__heading">Main Menu</p>
+					<section class="main-menu__items">
+						<div class="main-menu__link main-menu__link--active">
+							<section class="main-menu__link__content">
+								<div class="list-circle"></div>
+								<p class="main-menu__link__text">Statistics</p>
+							</section>
+							<img src="./assets/images/arrow-right-thin.png" alt="" class="mobile-icon icon">
+						</div>
+						<div class="main-menu__link">
+							<section class="main-menu__link__content">
+								<div class="list-circle"></div>
+								<p class="main-menu__link__text">Articles</p>
+							</section>
+							<img src="./assets/images/arrow-right-thin.png" alt="" class="mobile-icon icon">
+						</div>
+						<div class="main-menu__link">
+							<section class="main-menu__link__content">
+								<div class="list-circle"></div>
+								<p class="main-menu__link__text">Forms</p>
+							</section>
+							<img src="./assets/images/arrow-right-thin.png" alt="" class="mobile-icon icon">
+						</div>
+						<div class="main-menu__link">
+							<section class="main-menu__link__content">
+								<div class="list-circle"></div>
+								<p class="main-menu__link__text">People</p>
+							</section>
+							<img src="./assets/images/arrow-right-thin.png" alt="" class="mobile-icon icon">
+						</div>
+					</section>
+				</div>
+			</section>
+			<!-- <a href="#">About</a>
+				<a href="#">Services</a>
+				<a href="#">Clients</a>
+				<a href="#">Contact</a> -->
+		</div>
+	</header>
+	<main>
+		<section class="article-links">
+			<div class="article-links__content">
+				<h1>Article Statistics</h1>
+				<div class="right">
+					<a href="#">Settings</a>
+					<p>|</p>
+					<a href="#">Analytics</a>
+					<p>|</p>
+					<a href="#">Watchlist</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="article-options">
+			<article class="left">
+				<div class="date-selector">
+					<button class="btn btn-primary chevron chevron-left">
+						<img src="./assets/images/chevron-left.png" alt="" class="mobile-icon icon" />
+					</button>
+					<select id="date-span" class="btn btn-primary">
+						<option value="1">03/03/2019 - 20/08/2019</option>
+						<option value="2">04/03/2019 - 20/08/2019</option>
+						<option value="3">05/03/2019 - 22/08/2019</option>
+						<option value="4">06/03/2019 - 23/08/2019</option>
+					</select>
+					<button class="btn btn-primary chevron chevron-right">
+						<img src="./assets/images/chevron-right.png" alt="" class="mobile-icon icon" />
+					</button>
+				</div>
+				<!-- <div class="date-selector">
+						<button class="btn"><</button>
+						<button class="btn btn-primary">03/03/2019 - 20/08/2019</button>
+						<button class="btn">></button>
+					</div> -->
+				<div class="day-selector">
+					<select id="days" class="btn btn-primary">
+						<option value="All Day">All Day</option>
+						<option value="1 Day">1 Day</option>
+						<option value="2 Days">2 Days</option>
+						<option value="3 Days">3 Days</option>
+					</select>
+				</div>
+				<!-- <div class="day-selector">
+						<button class="btn btn-primary">
+                            <p>All Day</p>
+                            <img src="./assets/images/chevron-down.png" alt="" class="mobile-icon">
+                        </button>
+					</div> -->
+				<p>Advanced Options</p>
+				<button class="btn btn-sm btn-blue">new</button>
+			</article>
+			<select id="export-type" class="btn btn-primary">
+				<option value="1">CSV</option>
+				<option value="2">PNG</option>
+				<option value="3">JPG</option>
+				<option value="4">Excel</option>
+			</select>
+		</section>
+
+		<section class="article-stats">
+			<div class="charts-container">
+				<section class="chart">
+					<div class="chart__data">
+						<p class="chart__data__numbers">32,451</p>
+						<p class="chart__data__title">Visits</p>
+						<p class="chart__data__info">+14.00(+0.50%)</p>
+					</div>
+					<div class="chart__plot" id="visits-chart"></div>
+				</section>
+				<section class="chart">
+					<div class="chart__data">
+						<p class="chart__data__numbers chart__data__numbers--orange">
+							7,688
+						</p>
+						<p class="chart__data__title">Conversions</p>
+						<p class="chart__data__info">+14.00(+0.50%)</p>
+					</div>
+					<div class="chart__plot" id="conversions-chart"></div>
+				</section>
+			</div>
+			<div class="article-info">
+				<div class="article-info__left">
+					<div class="article-info__row">
+						<p class="info-heading">Author:</p>
+						<p class="info-detail">Pablo Molina</p>
+					</div>
+					<div class="article-info__row">
+						<p class="info-heading">Published on:</p>
+						<p class="info-detail">04/08/2020</p>
+					</div>
+					<div class="article-info__row">
+						<p class="info-heading">Categories:</p>
+						<p class="info-detail">Design, Article, Styles</p>
+					</div>
+					<div class="article-info__row">
+						<p class="info-heading">Tags:</p>
+						<p class="info-detail">CSS, Design</p>
+					</div>
+				</div>
+				<div class="article-info__right">
+					<div class="article-info__row">
+						<p class="info-heading">URL:</p>
+						<div class="info-detail">
+							<p>https://www.google.com</p>
+							<img src="./assets/images/share-variant.png" alt="" class="mobile-icon icon" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="article">
+			<div class="article-intro">
+				<p class="article-heading">The future of CSS features in 2020</p>
+				<p class="article-description">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+					mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+					voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+					fugiat iusto fuga praesentium optio, eaque rerum! Provident
+					similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+					eius earum ut molestias architecto voluptate aliquam nihil, eveniet
+					aliquid culpa officia aut!
+				</p>
+			</div>
+			<div class="article-paragraph">
+				<p class="article-paragraph__heading">What is the 'State of CSS'?</p>
+				<div class="article-paragraph__description">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+						mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+						voluptatum laborum numquam blanditiis harum
+					</p>
+					<p>
+						quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque
+						rerum! Provident similique accusantium nemo autem. Veritatis
+						obcaecati tenetur iure
+					</p>
+					<p>
+						eius earum ut molestias architecto voluptate aliquam nihil,
+						eveniet aliquid culpa officia aut!
+					</p>
+				</div>
+			</div>
+			<div class="article-paragraph">
+				<p class="article-paragraph__heading">Flexbox</p>
+				<div class="article-paragraph__description flexbox-paragraph">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+						mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+						voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+						fugiat iusto fuga praesentium optio, eaque rerum! Provident
+						similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+						eius earum ut molestias architecto voluptate aliquam nihil,
+						eveniet aliquid culpa officia aut!
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+						mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+						voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+						fugiat iusto fuga praesentium optio, eaque rerum! Provident
+					</p>
+				</div>
+			</div>
+			<div class="article-paragraph">
+				<p class="article-paragraph__heading">Typography</p>
+				<div class="article-paragraph__description typography-paragraph">
+					<img src="./assets/images/Capture.PNG" alt="" />
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+						mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+						voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+						fugiat iusto fuga praesentium optio, eaque rerum! Provident
+						similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+						eius earum ut molestias architecto voluptate aliquam nihil,
+						eveniet aliquid culpa officia aut!
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+						mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+						voluptatum laborum numquam blanditiis harum quisquam eius sed
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div class="copyright">&copy; 2019</div>
+		<div class="credits">Designed by: OnlineBeratung</div>
+	</footer>
+
+	<script src="./code.js"></script>
+	<script src="./sidebar.js"></script>
+</body>
+
+</html>

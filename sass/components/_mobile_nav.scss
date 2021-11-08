@@ -1,0 +1,28 @@
+.mobile-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-sm;
+    background-color: $white;
+    height: 70px;
+
+    @include breakpoint(lg){
+        padding: $padding-lg;
+    }
+
+    .right-side{
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        @include breakpoint(lg){
+            gap: 25px;
+        }
+    }
+}
+
+.user-profile{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
